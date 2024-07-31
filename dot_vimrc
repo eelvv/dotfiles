@@ -80,3 +80,5 @@ vnoremap * "/y/<C-r>/<CR>
 vnoremap # "/y?<C-r>/<CR>
 
 set clipboard=unnamed
+
+packadd chezmoi.vim
