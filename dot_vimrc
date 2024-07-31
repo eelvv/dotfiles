@@ -1,0 +1,82 @@
+set hlsearch
+set nu
+set incsearch
+set ignorecase
+set smartcase
+
+let mapleader = "\<Space>"
+nnoremap Y y$
+
+vnoremap Y "+y
+
+nnoremap < <<
+nnoremap > >>
+
+noremap <LEADER><CR> :nohlsearch<CR>
+
+noremap <LEADER>tt :%s/    /\t/g
+
+"      ^
+"      "      u
+" < n     i >
+" "      e
+" "      v
+"
+inoremap tn <Esc>
+noremap k i
+noremap K I
+noremap l u
+
+noremap <silent> n h
+noremap <silent> u k
+noremap <silent> e j
+noremap <silent> i l
+noremap <silent> N 7h
+noremap <silent> U 5k
+noremap <silent> E 5j
+noremap <silent> I 7l
+
+noremap <silent> <C-n> 0
+noremap <silent> <C-i> $
+
+noremap s <nop>
+noremap S :w<CR>
+noremap Q :q<CR>
+noremap ; :
+
+noremap si :vsplit<CR>
+noremap se :split<CR>
+
+noremap <LEADER>i <C-w>l
+noremap <LEADER>u <C-w>k
+noremap <LEADER>n <C-w>h
+noremap <LEADER>e <C-w>j
+
+noremap tn :tabprevious<CR>
+noremap ti :tabnext<CR>
+
+nnoremap \p 1<C-G>
+
+noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
+
+noremap ` ~
+noremap - N
+noremap = n
+
+noremap <C-c> zz
+
+noremap \s :%s//g<left><left>
+
+":vnoremap <LEADER>cn :s/^/\/\/<cr>
+":vnoremap <LEADER>cu :s/\/\//<cr>
+":nnoremap <LEADER>cn :s/^/\/\/<cr>
+":nnoremap <LEADER>cu :s/\/\//<cr>
+
+noremap gd <c-]>zz
+
+":nnoremap <space> za 
+
+vnoremap * "/y/<C-r>/<CR>
+vnoremap # "/y?<C-r>/<CR>
+
+set clipboard=unnamed
