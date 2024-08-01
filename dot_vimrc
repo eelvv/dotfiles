@@ -6,9 +6,9 @@ set smartcase
 set ts=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
 set autoindent
-set listchars=tab:>-,trail:~
+"set ffs=unix
+set listchars=tab:>-,trail:~,eol:<
 set list
 
 let mapleader = "\<Space>"
