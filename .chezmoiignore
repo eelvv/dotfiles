@@ -1,5 +1,5 @@
 {{- if ne .chezmoi.os "windows" }}
-dot_vsvimrc
+.vsvimrc
 Documents
 {{- else }}
 .zshrc
