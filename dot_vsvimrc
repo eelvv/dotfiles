@@ -1,0 +1,59 @@
+source ~/.vimrc
+
+:vnoremap <LEADER>/ :vsc Edit.CommentSelection<CR>
+:vnoremap <LEADER>z :vsc Edit.UnCommentSelection<CR>
+:nnoremap <LEADER>/ :vsc Edit.CommentSelection<CR>
+:nnoremap <LEADER>z :vsc Edit.UnCommentSelection<CR>
+
+:nnoremap <LEADER>fd :vsc Edit.FormatDocument<CR>
+:vnoremap <LEADER>fd :vsc Edit.FormatSelection<CR><esc>
+
+:nnoremap <LEADER>d :vsc Debug.Start
+:nnoremap <LEADER>b :vsc Build.BuildSolution
+
+:nnoremap <LEADER>sd :vsc Debug.StopDebugging
+:nnoremap <LEADER>rd :vsc Debug.Restart
+
+:nnoremap <LEADER>cn :vsc File.OpenContainingFolder<CR>
+
+:nnoremap <c-m> :vsc View.NavigateForward<CR>
+:nnoremap <c-o> :vsc View.NavigateBackward<CR>
+:vnoremap <c-m> :vsc View.NavigateForward<CR>
+:vnoremap <c-o> :vsc View.NavigateBackward<CR>
+
+:nnoremap tt :vsc View.SolutionExplorer<CR>
+
+" Default
+":noremap gh :vsc EditorContextMenus.CodeWindow.ToggleHeaderCodeFile<CR>
+:nnoremap <LEADER>fr :vsc Edit.FindinFiles<CR>
+
+"KsoVisualTidy
+:nnoremap gh :vsc KsoVisualTidy.SwitchBetweenSourceHeader<CR>
+:nnoremap gd :vsc KsoVisualTidy.GotoDefinition<CR>
+:nnoremap gs :vsc KsoVisualTidy.GoToSymbol<CR>
+:nnoremap gf :vsc KsoVisualTidy.GoToFile<CR>
+:nnoremap gi :vsc KsoVisualTidy.GoToImplementations<CR>
+:nnoremap <LEADER>ff :vsc KsoVisualTidy.FindReferences<CR>
+:nnoremap <LEADER>fc :vsc KsoVisualTidy.ShowCallHierarchy<CR>
+:nnoremap <LEADER>ft :vsc KsoVisualTidy.ShowTypeHierarchy<CR>
+:nnoremap <LEADER>' :vsc View.QuickActionsForPosition<CR>
+
+"VAssistX
+":noremap gh :vsc VAssistX.GoToRelated<CR>
+":noremap gd :vsc VAssistX.GoToImplementation<CR>
+":nnoremap gs :vsc VAssistX.FindSymbolDialog<CR>
+":nnoremap gf :vsc VAssistX.OpenFileInSolutionDialog<CR>
+":nnoremap <LEADER>ff :vsc VAssistX.FindReferences<CR>
+":nnoremap <LEADER>rn :vsc VAssistX.RefactorRename<CR>
+":nnoremap <LEADER>' :vsc VAssistX.RefactorContextMenu<CR>
+"
+
+
+":nnoremap <LEADER>me :vsc Edit.InsertNextMatchingCaret<CR>
+":nnoremap <LEADER>mu :vsc Edit.RemoveLastCaret<CR>
+":nnoremap <LEADER>mi :vsc Edit.MoveLastCaretDown<CR>
+":nnoremap <LEADER>mm :vsc Edit.InsertCaretsatAllMatching<CR>
+":vnoremap <LEADER>me :vsc Edit.InsertNextMatchingCaret<CR>
+":vnoremap <LEADER>mu :vsc Edit.RemoveLastCaret<CR>
+":vnoremap <LEADER>mi :vsc Edit.MoveLastCaretDown<CR>
+":vnoremap <LEADER>mm :vsc Edit.InsertCaretsatAllMatching<CR>

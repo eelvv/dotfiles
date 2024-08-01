@@ -1,0 +1,27 @@
+source ~/.vimrc
+
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gh :action GotoRelated<CR>
+nnoremap gf :action GotoFile<CR>
+nnoremap <Leader>t :action ActivateTerminalToolWindow<CR>
+nnoremap <Leader>/ :action CommentByLineComment<CR>
+vnoremap <Leader>/ :action CommentByBlockComment<CR>
+nnoremap <Leader>re :action RenameElement<CR>
+nnoremap <Leader>fm :action ReformatCode<CR>
+nnoremap <Leader>fi :action Find<CR>
+
+nnoremap <Leader>b :action ToggleLineBreakpoint<CR>
+nnoremap <Leader>d :action ChooseDebugConfiguration<CR>
+nnoremap r :action ChooseRunConfiguration<CR>
+
+nnoremap tt :action ActivateProjectToolWindow<CR>
+nnoremap <Leader>su :action ShowUsages<CR>
+nnoremap <Leader>fu :action FindUsages<CR>
+
+nnoremap tn :action PreviousTab<CR>
+nnoremap ti :action NextTab<CR>
+
+" CLion Only
+nnoremap <Leader>rc :action CMake.ReloadCMakeProject<CR>
+
+set easymotion

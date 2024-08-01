@@ -1,3 +1,6 @@
-{{- if eq .chezmoi.os "windows" }}
-Documents/PowerShell/profiles.ps1
+{{- if ne .chezmoi.os "windows" }}
+dot_vsvimrc
+Documents
+{{- else }}
+.zshrc
 {{- end }}
