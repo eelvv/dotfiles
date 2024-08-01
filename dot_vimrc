@@ -8,6 +8,8 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
+set listchars=tab:>-,trail:~
+set list
 
 let mapleader = "\<Space>"
 nnoremap Y y$
@@ -19,7 +21,8 @@ nnoremap > >>
 
 noremap <LEADER><CR> :nohlsearch<CR>
 
-noremap <LEADER>tt :%s/    /\t/g
+nnoremap <LEADER>tt :%s/    /\t/g
+vnoremap <LEADER>tt :s/    /\t/g
 
 "      ^
 "      "      u
@@ -46,6 +49,8 @@ noremap <silent> <C-i> $
 
 noremap s <nop>
 noremap S :w<CR>
+noremap <LEADER>rc :e $HOME/.vimrc<CR>
+noremap <LEADER>rr :source $HOME/.vimrc<CR>
 noremap Q :q<CR>
 noremap ; :
 
@@ -57,8 +62,11 @@ noremap <LEADER>u <C-w>k
 noremap <LEADER>n <C-w>h
 noremap <LEADER>e <C-w>j
 
-noremap tn :tabprevious<CR>
-noremap ti :tabnext<CR>
+"noremap tn :tabprevious<CR>
+"noremap ti :tabnext<CR>
+noremap tn :bprevious<CR>
+noremap ti :bnext<CR>
+noremap te :bdelete<CR>
 
 nnoremap \p 1<C-G>
 
@@ -79,12 +87,14 @@ noremap \s :%s//g<left><left>
 
 noremap gd <c-]>zz
 
-":nnoremap <space> za 
+":nnoremap <space> za
 
 vnoremap * "/y/<C-r>/<CR>
 vnoremap # "/y?<C-r>/<CR>
 
 set clipboard=unnamed
+set mouse=a
+
 
 """ vim-plug auto download
 if has('win32')
@@ -96,19 +106,50 @@ endif
 if empty(glob(g:config_path . '/autoload/plug.vim'))
     let g:vim_plug_url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     execute '!curl -fLo ' . g:config_path . '/autoload/plug.vim --create-dirs ' . g:vim_plug_url
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    autocmd VimEnter * PlugInstall --sync | source $HOME/.vimrc
 endif
 
 call plug#begin()
 
 " ======= plug begin ======
 Plug 'vim-airline/vim-airline'
-
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
 " ======= plug end   ======
 
 call plug#end()
 
+""" plug-config: 
+"""
+
 """ plug-config: vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
+"""
+
+""" plug-config: nerd-tree
+nnoremap <leader>tn :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen='3'
+let NERDTreeMapOpenExpl='O'
+let NERDTreeMapJumpParent='h'
+let NERDTreeMapJumpPrevSibling='u'
+let NERDTreeMapJumpNextSibling='e'
+"""
+
+""" plug-config: fzf
+let g:fzf_vim = {}
+let g:fzf_vim.preview_window = ['right,50%', 'ctrl-/']
+let g:fzf_vim.buffers_jump = 1
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>gf :GFiles<CR>
+nnoremap <leader>gg :Ag<CR>
+"""
+
+""" plug-config: vim-cpp
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
 """
