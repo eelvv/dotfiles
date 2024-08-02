@@ -1,5 +1,6 @@
 {{- if eq .chezmoi.os "windows" }}
 
+scoop bucket add extras versions noneportable
 scoop install cloc cmake curl everything fzf geekuninstaller googlechrome grep mobaxterm motrix neovim pwsh python snipaste sudo vim windows-terminal wiztree
 
 {{- end }}
